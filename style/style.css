@@ -1,0 +1,146 @@
+html {
+    color: white;
+}
+
+body {
+    background-image: url("../images/ujan.gif");
+    background-repeat: no-repeat;
+    background-size: 1920px
+}
+
+#logo {
+    position: absolute;
+    top: 20.5vh;
+    left: 32vw;
+    width: 170px;
+    height: 170px;
+}
+
+.container {
+    margin: auto;
+    width: 665px;
+    background-color: rgba(28, 11, 1, 0.842);
+    height: 340px;
+    margin-top: 30vh;
+}
+
+h1 {
+    padding-top: 30px;
+    padding-left: 10px;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    opacity: 0.92;
+}
+
+h3 {
+    margin: 0;
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    font-weight: lighter;
+    opacity: 0.9;
+}
+
+input {
+    width: 160px;
+    padding: 12px 20px;
+    margin: 8px 10px;
+    display: inline-block;
+    border: 3px solid rgba(255, 255, 255, 0.708);
+    background-color: #341403;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: white;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+.atas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bawah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: white;
+    opacity: 0.7;
+}
+
+#submit {
+    background-color: #8E3200;
+    color: white;
+    padding: 14px 30px;
+    margin-left: 10px;
+    margin-right: 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#show {
+    background-color: #8E3200;
+    color: white;
+    padding: 14px 30px;
+    margin-left: 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    transition: 0.7s;
+    background-color: #542105;
+}
+
+#show:hover {
+    transition: 0.7s;
+    background-color: #542105;
+}
+
+.initabel {
+    width: 1000px;
+    background-color: black;
+    margin: auto;
+    margin-top: 20px;
+    visibility: hidden;
+}
+
+table,
+tr,
+td,
+th {
+    border: 1px solid white;
+    border-collapse: collapse;
+    padding: 10px;
+    text-align: center;
+}
+
+tr,
+th {
+    width: 15%;
+}
+
+td {
+    text-align: center;
+}
