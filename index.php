@@ -1638,11 +1638,11 @@ if (isset($_POST['submit'])) {
     document.getElementById("statusit4").innerHTML = Istiqlal(prediksiKetinggian(oldit, it));
     document.getElementById("statusjm4").innerHTML = JembatanMerah(prediksiKetinggian(oldjm, jm));
 
-    var pintukl = pintuAirkl(Katulampa(kl));
-    var pintufa = pintuAirfa(FlushingAncol(fa));
-    var pintumg = pintuAirmg(Manggarai(mg));
-    var pintuit = pintuAirit(Istiqlal(it));
-    var pintujm = pintuAirjm(JembatanMerah(jm));
+    var pintukl = pintuAirkl(Katulampa(prediksiKetinggian(oldkl, kl)));
+    var pintufa = pintuAirfa(FlushingAncol(prediksiKetinggian(oldfa, fa)));
+    var pintumg = pintuAirmg(Manggarai(prediksiKetinggian(oldmg, mg)));
+    var pintuit = pintuAirit(Istiqlal(prediksiKetinggian(oldit, it)));
+    var pintujm = pintuAirjm(JembatanMerah(prediksiKetinggian(oldjm, jm)));
 
     document.getElementById("PAkl").innerHTML = pintukl;
     document.getElementById("PAfa").innerHTML = pintufa;

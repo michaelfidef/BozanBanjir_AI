@@ -1474,11 +1474,11 @@ with open("data.json", "r") as data:
             statusPrediksiJembatanMerah = JembatanMerah(prediksiKetinggian(JembatanMerahAwal, JembatanMerahSekarang))
             
             # Status Pintu Air pada aliran sungai ciliwung
-            pintukl = pintuAirkl(statusKatulampaSekrang)
-            pintufa = pintuAirfa(statusFlushingAncolSekarang)
-            pintumg = pintuAirmg(statusManggaraiSekarang)
-            pintuit = pintuAirit(statusIstiqlalSekarang)
-            pintujm = pintuAirjm(statusJembatanMerahSekarang)
+            pintukl = pintuAirkl(statusPrediksiKatulampa)
+            pintufa = pintuAirfa(statusPrediksiFlushingAncol)
+            pintumg = pintuAirmg(statusPrediksiManggarai)
+            pintuit = pintuAirit(statusPrediksiIstiqlal)
+            pintujm = pintuAirjm(statusPrediksiJembatanMerah)
 
 
             # Cetak output
@@ -1492,7 +1492,7 @@ with open("data.json", "r") as data:
             print("Status Data Saat Ini        : %-10s %-10s %-10s %-10s %-10s" % (statusKatulampaSekrang, statusFlushingAncolSekarang, statusManggaraiSekarang, statusIstiqlalSekarang, statusJembatanMerahSekarang))
             print("=============================")
             print("Prediksi Ketinggian         : %-10s %-10s %-10s %-10s %-10s" % (prediksiKatulampa, prediksiFlushingAncol, prediksiManggarai, prediksiIstiqlal, prediksiJembatanMerah))
-            print("Data Prediksi Selanjutnya   : %-10s %-10s %-10s %-10s %-10s" % (statusKatulampa, statusPrediksiFlushingAncol, statusPrediksiManggarai, statusPrediksiIstiqlal, statusPrediksiJembatanMerah))
+            print("Data Prediksi Selanjutnya   : %-10s %-10s %-10s %-10s %-10s" % (statusPrediksiKatulampa, statusPrediksiFlushingAncol, statusPrediksiManggarai, statusPrediksiIstiqlal, statusPrediksiJembatanMerah))
             print("=============================")
             print("Pintu Air                   : %-10s %-10s %-10s %-10s %-10s" % (pintukl, pintufa, pintumg, pintuit, pintujm))
             print("=============================")
