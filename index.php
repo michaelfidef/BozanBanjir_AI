@@ -41,29 +41,28 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <div class="container">
-        <h1>
-            Pendeteksi Pintu Air Sungai Ciliwung
-        </h1>
-        <h3>Isi Data Ketinggian Air pada setiap pintu air</h3>
+    <p id="gambarLogo"><img src="images/LogoBozanBanjir.png" alt="Logo Bozan Banjir" id="logo">
+    <h1>
+        Pendeteksi Pintu Air Sungai Ciliwung<span>&copy; Fidef, Herry, Melisa</span>
+    </h1></p>
+    <div class="bagianInput">
+        <h3>Isi Data Ketinggian Air Pada Setiap Pintu Air</h3>
         <form action="" method="POST">
-            <div class="atas">
                 <input type="number" min="1" name="Katulampa" id="Katulampa" placeholder="Katulampa" required>
+                <p></p>
                 <input type="number" min="1" name="flushingAncol" id="flushingAncol" placeholder="Flushing Ancol" required>
+                <p></p>
                 <input type="number" min="1" name="manggarai" id="manggarai" placeholder="Manggarai" required>
-            </div>
-            <div class="bawah">
+                <p></p>
                 <input type="number" min="1" name="istiqlal" id="istiqlal" placeholder="Istiqlal" required>
+                <p></p>
                 <input type="number" min="1" name="jembatanMerah" id="jembatanMerah" placeholder="Jembatan Merah" required>
-            </div>
-            <div class="submit">
-                <p>Jaga dan Peduli Sungai Ciliwung sejak dini!</p>
+                <p id="pesan">Jaga dan Peduli Sungai Ciliwung sejak dini!</p>
                 <button type="button" name="show" id="show" onclick="reveal()">Lihat</button>
                 <button type="submit" name="submit" id="submit">Cek Perkiraan</button>
-            </div>
         </form>
     </div>
-    <div class="initabel" id="initabel">
+    <div class="tabelPrediksi" id="tabelPrediksi">
         <table width="100%">
             <tr>
                 <th>Kondisi</th>
@@ -139,7 +138,7 @@ if (isset($_POST['submit'])) {
 
 <script>
     function reveal() {
-        var x = document.getElementById("initabel");
+        var x = document.getElementById("tabelPrediksi");
         if (x.style.visibility === "hidden") {
             x.style.visibility = "visible";
             x.style.opacity = "1";
@@ -231,13 +230,13 @@ if (isset($_POST['submit'])) {
         kl = katulampa
 
         if (kl == 'Normal') {
-            kondisi = 'Dibuka 20%'
+            kondisi = 'Buka 20%'
         }else if(kl == 'Waspada'){
-            kondisi = 'Dibuka 40%'
+            kondisi = 'Buka 40%'
         }else if(kl == 'Siaga'){
-            kondisi = 'Dibuka 70%'
+            kondisi = 'Buka 70%'
         }else if(kl == 'Bahaya'){
-            kondisi = 'Dibuka 100%'
+            kondisi = 'Buka 100%'
         }
         return kondisi 
     }
@@ -245,13 +244,13 @@ if (isset($_POST['submit'])) {
     function pintuAirfa(flushingAncol){
         fa = flushingAncol
         if (fa == 'Normal') {
-            kondisi = 'Dibuka 20%'
+            kondisi = 'Buka 20%'
         }else if(fa == 'Waspada'){
-            kondisi = 'Dibuka 40%'
+            kondisi = 'Buka 40%'
         }else if(fa == 'Siaga'){
-            kondisi = 'Dibuka 70%'
+            kondisi = 'Buka 70%'
         }else if(fa == 'Bahaya'){
-            kondisi = 'Dibuka 100%'
+            kondisi = 'Buka 100%'
         }
         return kondisi
     }
@@ -259,13 +258,13 @@ if (isset($_POST['submit'])) {
     function pintuAirmg(manggarai){
         mg = manggarai 
         if (mg == 'Normal') {
-            kondisi = 'Dibuka 40%'
+            kondisi = 'Buka 40%'
         }else if(mg == 'Waspada'){
-            kondisi = 'Dibuka 80%'
+            kondisi = 'Buka 80%'
         }else if(mg == 'Siaga'){
-            kondisi = 'Dibuka 90%'
+            kondisi = 'Buka 90%'
         }else if(mg == 'Bahaya'){
-            kondisi = 'Dibuka 100%'
+            kondisi = 'Buka 100%'
         }
         return kondisi
     }
@@ -273,13 +272,13 @@ if (isset($_POST['submit'])) {
     function pintuAirit(istiqlal){
         it = istiqlal
         if (it == 'Normal') {
-            kondisi = 'Dibuka 20%'
+            kondisi = 'Buka 20%'
         }else if(it == 'Waspada'){
-            kondisi = 'Dibuka 40%'
+            kondisi = 'Buka 40%'
         }else if(it == 'Siaga'){
-            kondisi = 'Dibuka 70%'
+            kondisi = 'Buka 70%'
         }else if(it == 'Bahaya'){
-            kondisi = 'Dibuka 100%'
+            kondisi = 'Buka 100%'
         }
         return kondisi
     }
@@ -287,13 +286,13 @@ if (isset($_POST['submit'])) {
     function pintuAirjm(jembatanMerah){
         jm = jembatanMerah
         if (jm == 'Normal') {
-            kondisi = 'Dibuka 20%'
+            kondisi = 'Buka 20%'
         }else if(jm == 'Waspada'){
-            kondisi = 'Dibuka 40%'
+            kondisi = 'Buka 40%'
         }else if(jm == 'Siaga'){
-            kondisi = 'Dibuka 70%'
+            kondisi = 'Buka 70%'
         }else if(jm == 'Bahaya'){
-            kondisi = 'Dibuka 100%'
+            kondisi = 'Buka 100%'
         }
         return kondisi
     }
@@ -306,1094 +305,1094 @@ if (isset($_POST['submit'])) {
         jm = jembatanMerah
 
         if (kl == 'Siaga' || kl == 'Bahaya') {
-            pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+            pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
         } else if (kl == 'Waspada') {
             // Jika status ketinggian Katulampa berada pada posisi "Waspada"
             // Maka akan dilanjutkan pengecekan kondisi 4 lokasi pemantauan lainnya
 
             // Jika keempatnya "Bahaya"
             if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 3 "Bahaya" 1 "Siaga"
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 3 "Bahaya" 1 "Waspada"
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 3 "Bahaya" 1 "Normal"
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 2 "Bahaya" 2 "Siaga"
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
 
                 // Jika 2 "Bahaya" 1 "Siaga" 1 "Waspada"
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Manggarai dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Manggarai dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
 
                 // Jika 2 "Bahaya" 1 "Siaga" 1 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
 
                 // Jika 2 "Bahaya" 2 "Waspada"
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
 
                 // Jika 2 "Bahaya" 1 "Waspada" 1 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 3 "Siaga"
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 1 "Bahaya" 2 "Siaga" 1 "Waspada"
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 1 "Bahaya" 2 "Siaga" 1 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
 
                 // Jika 1 "Bahaya" 1 "Siaga" 2 "Waspada"
                 //Bahaya, Siaga, Waspada, Waspada
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 //Siaga, Bahaya, Waspada, Waspada
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 //Waspada, Bahaya, Siaga, Waspada
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 //Bahaya, Waspada, Siaga, Waspada
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 //Siaga, Waspada, Bahaya, Waspada
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!!'
                 //Waspada, Siaga, Bahaya, Waspada
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Waspada, Siaga, Waspada, Bahaya
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Waspada, Waspada, Bahaya
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Waspada, Siaga, Bahaya
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Bahaya, Waspada, Siaga
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Bahaya, Waspada, Waspada, Siaga
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Waspada, Bahaya, Siaga
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 1 "Siaga" 1 "Waspada" 1 "Normal"
                 // Normal, Siaga, Waspada, Bahaya
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Waspada, Bahaya
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Waspada, Normal, Siaga, Bahaya
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada Lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada Lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Normal, Waspada, Siaga, Bahaya
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Siaga, Waspada, Normal, Bahaya
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Waspada, Siaga, Normal, Bahaya
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Waspada, Siaga, Bahaya, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Siaga, Waspada, Bahaya, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi istiqlal berpotensi terjadi banjir!'
                 // Bahaya, Waspada, Siaga, Normal
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
                 // Waspada, Bahaya, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Menggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Menggarai berpotensi terjadi banjir!'
                 // Siaga, Bahaya, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Siaga, Waspada, Normal
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Normal, Waspada, Siaga
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
                 // Normal, Bahaya, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Waspada, Bahaya, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Waspada, Normal, Siaga
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi flushing Ancol berpotensi terjadi banjir!'
                 // Normal, Waspada, Bahaya, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Waspada, Normal, Bahaya, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Siaga, Normal, Bahaya, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Normal, Siaga, Bahaya, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Bahaya, Siaga, Normal, Waspada
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi flushing Ancol berpotensi terjadi banjir!'
                 // Siaga, Bahaya, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Normal, Bahaya, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Normal, Siaga, Waspada
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi flushing Ancol berpotensi terjadi banjir!'
 
                 // Jika 1 "Bahaya" 1 "Siaga" 2 "Normal"
                 // Normal, Normal, Siaga, Bahaya
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Bahaya, Normal, Siaga
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Normal, Bahaya, Siaga
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Siaga, Bahaya, Normal
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Bahaya, Siaga, Normal
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Normal, Siaga, Normal, Bahaya
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Bahaya, Siaga, Normal
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Normal, Normal, Bahaya
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Bahaya, Normal
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Bahaya, Normal, Normal, Siaga
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Normal, Siaga, Normal
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Siaga, Normal, Normal
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Siaga, Bahaya, Normal, Normal
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 1 "Waspada" 2 "Normal"
 
                 // Normal, Normal, Waspada, Bahaya
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Normal, Bahaya, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Waspada, Normal, Bahaya
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Bahaya, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Normal, Waspada, Bahaya, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Bahaya, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Waspada, Normal, Normal, Bahaya
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Normal, Bahaya, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Bahaya, Normal, Normal, Waspada
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Normal, Waspada, Normal
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Waspada, Normal, Normal
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Bahaya, Normal, Normal
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 3 "Waspada"
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 3 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
 
                 // 4 Siaga
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
                 // 3 Siaga 1 Waspada
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
                 // 3 Siaga 1 Normal
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // 2 Siaga 2 Waspada
 
                 // Siaga, Siaga, Waspada, Waspada
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Siaga, Waspada
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
                 // Siaga, Waspada, Waspada, Siaga
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Siaga, Siaga, Waspada
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan istiqlal berpotensi banjir!'
                 // Waspada, Siaga, Waspada, Siaga
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Waspada, Siaga, Siaga
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
 
 
                 // 2 Siaga 1 Waspada 1 Normal
 
                 // Normal, Siaga, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
                 // Normal, Siaga, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
                 // Normal, Waspada, Siaga, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Siaga, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
                 // Siaga, Normal, Waspada, Siaga
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
                 // Siaga, Siaga, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
                 // Siaga, Siaga, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Normal, Siaga
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Jembatan Merah  berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Jembatan Merah  berpotensi banjir!'
                 // Siaga, Waspada, Siaga, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
                 // Waspada, Normal, Siaga, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Siaga, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Siaga, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
 
                 // 2 Siaga 2 Normal
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
                 // Normal, Waspada, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal warga perlu waspada!'
                 // Waspada, Normal, Waspada, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal warga perlu waspada!'
                 // Normal, Waspada, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Jembatan Merah warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Jembatan Merah warga perlu waspada!'
                 // Waspada, Normal, Normal, Waspada
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
                 // Normal, Normal, Waspada, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah warga perlu waspada!'
 
                 // 1 Siaga 3 Waspada
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // 1 Siaga 3 Normal
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // 2 Waspada 2 Normal
 
                 // Waspada, Waspada, Normal, Normal
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
                 // Normal, Waspada, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Manggarai dan Istiqlal warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Manggarai dan Istiqlal warga perlu waspada!'
                 // Waspada, Normal, Waspada, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol dan Istiqlal warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol dan Istiqlal warga perlu waspada!'
                 // Normal, Waspada, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Manggarai dan Jembatan Merah warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Manggarai dan Jembatan Merah warga perlu waspada!'
                 // Waspada, Normal, Normal, Waspada
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
                 // Normal, Normal, Waspada, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Istiqlal dan Jembatan Merah warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Istiqlal dan Jembatan Merah warga perlu waspada!'
 
 
                 // 2 Waspada 1 Siaga 1 Normal
 
                 // Waspada, Waspada, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal warga perlu waspada!'
                 // Siaga, Waspada, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol warga perlu waspada!'
                 // Waspada, Siaga, Waspada, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Manggarai warga perlu waspada!'
                 // Siaga, Waspada, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol warga perlu waspada!'
                 // Waspada, Siaga, Normal, Waspada
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Manggarai warga perlu waspada!'
                 // Normal, Siaga, Waspada, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Manggarai warga perlu waspada!'
                 // Siaga, Normal, Waspada, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Normal, Siaga, Waspada
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Waspada, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Waspada, Waspada, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Waspada, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Normal, Waspada, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // 1 Waspada 3 Normal
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Jembatan Merah warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Jembatan Merah warga perlu waspada!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Istiqlal warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Istiqlal warga perlu waspada!'
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Manggarai warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Manggarai warga perlu waspada!'
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol warga perlu waspada!'
 
                 //2 Normal 1 Siaga 1 Waspada
 
                 // Normal, Normal, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == '' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Normal, Siaga, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Normal, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol warga perlu waspada!'
                 // Normal, Siaga, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Waspada, Siaga, Normal, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Normal, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Normal, Waspada, Siaga, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Waspada, Normal, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Normal, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Normal, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Waspada, Normal, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
             } else {
-                pesan = '[AMAN] Pada lokasi Katulampa warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Katulampa warga perlu waspada!'
             }
         } else {
             // Jika keempatnya "Bahaya"
             if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 3 "Bahaya" 1 "Siaga"
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 3 "Bahaya" 1 "Waspada"
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 3 "Bahaya" 1 "Normal"
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 2 "Bahaya" 2 "Siaga"
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
 
                 // Jika 2 "Bahaya" 1 "Siaga" 1 "Waspada"
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Manggarai berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Flushing Ancol dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Manggarai dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Manggarai dan Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Istiqlal berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Manggarai dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Istiqlal dan Jembatan Merah berpotensi terjadi banjir!'
 
                 // Jika 2 "Bahaya" 1 "Siaga" 1 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
 
                 // Jika 2 "Bahaya" 2 "Waspada"
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
 
                 // Jika 2 "Bahaya" 1 "Waspada" 1 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Bahaya' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Bahaya' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 3 "Siaga"
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 1 "Bahaya" 2 "Siaga" 1 "Waspada"
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
                 // Jika 1 "Bahaya" 2 "Siaga" 1 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
 
                 // Jika 1 "Bahaya" 1 "Siaga" 2 "Waspada"
                 //Bahaya, Siaga, Waspada, Waspada
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 //Siaga, Bahaya, Waspada, Waspada
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 //Waspada, Bahaya, Siaga, Waspada
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 //Bahaya, Waspada, Siaga, Waspada
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 //Siaga, Waspada, Bahaya, Waspada
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!!'
                 //Waspada, Siaga, Bahaya, Waspada
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Waspada, Siaga, Waspada, Bahaya
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Waspada, Waspada, Bahaya
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Waspada, Siaga, Bahaya
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Bahaya, Waspada, Siaga
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Bahaya, Waspada, Waspada, Siaga
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Waspada, Bahaya, Siaga
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 1 "Siaga" 1 "Waspada" 1 "Normal"(UDAH BENER)
                 // Normal, Siaga, Waspada, Bahaya
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Waspada, Bahaya
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Waspada, Normal, Siaga, Bahaya
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada Lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada Lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Normal, Waspada, Siaga, Bahaya
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Siaga, Waspada, Normal, Bahaya
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Waspada, Siaga, Normal, Bahaya
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi terjadi banjir!'
                 // Waspada, Siaga, Bahaya, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Siaga, Waspada, Bahaya, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi istiqlal berpotensi terjadi banjir!'
                 // Bahaya, Waspada, Siaga, Normal
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
                 // Waspada, Bahaya, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Menggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Menggarai berpotensi terjadi banjir!'
                 // Siaga, Bahaya, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Siaga, Waspada, Normal
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Normal, Waspada, Siaga
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
                 // Normal, Bahaya, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Waspada, Bahaya, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Waspada, Normal, Siaga
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
                 // Normal, Waspada, Bahaya, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Waspada, Normal, Bahaya, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Siaga, Normal, Bahaya, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Normal, Siaga, Bahaya, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi terjadi banjir!'
                 // Bahaya, Siaga, Normal, Waspada
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
                 // Siaga, Bahaya, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Normal, Bahaya, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi terjadi banjir!'
                 // Bahaya, Normal, Siaga, Waspada
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi terjadi banjir!'
 
                 // Jika 1 "Bahaya" 1 "Siaga" 2 "Normal"
                 // Normal, Normal, Siaga, Bahaya
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Bahaya, Normal, Siaga
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Siaga' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Normal, Bahaya, Siaga
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Bahaya' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Siaga, Bahaya, Normal
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Bahaya, Siaga, Normal
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Normal, Siaga, Normal, Bahaya
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Bahaya, Siaga, Normal
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Normal, Normal, Bahaya
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Bahaya, Normal
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Bahaya, Normal, Normal, Siaga
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Normal, Siaga, Normal
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Siaga, Normal, Normal
             } else if (fa == 'Bahaya' && mg == 'Siaga' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Siaga, Bahaya, Normal, Normal
             } else if (fa == 'Siaga' && mg == 'Bahaya' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 1 "Waspada" 2 "Normal"
 
                 // Normal, Normal, Waspada, Bahaya
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Normal, Bahaya, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Waspada, Normal, Bahaya
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Bahaya, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Normal, Waspada, Bahaya, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Bahaya, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
                 // Waspada, Normal, Normal, Bahaya
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Normal, Bahaya, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Bahaya, Normal, Normal, Waspada
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Normal, Waspada, Normal
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Bahaya, Waspada, Normal, Normal
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Bahaya, Normal, Normal
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 3 "Waspada"
             } else if (fa == 'Bahaya' && mg == 'Waspada' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Bahaya' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Bahaya' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Waspada' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
 
                 // Jika 1 "Bahaya" 3 "Normal"
             } else if (fa == 'Bahaya' && mg == 'Normal' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Flushing Ancol berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Bahaya' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Bahaya' && jm == 'Normal') {
-                pesan = '[EVAKUASI] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Istiqlal berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Normal' && jm == 'Bahaya') {
-                pesan = '[EVAKUASI] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Pada lokasi Jembatan Merah berpotensi banjir!'
 
                 // 4 Siaga
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
                 // 3 Siaga 1 Waspada
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
                 // 3 Siaga 1 Normal
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[EVAKUASI] DAS Ciliwung berpotensi terjadi banjir!'
+                pesan = '! SEGERA  EVAKUASI ! Sungai Ciliwung berpotensi terjadi banjir!'
 
 
 
@@ -1401,190 +1400,190 @@ if (isset($_POST['submit'])) {
 
                 // Normal, Siaga, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
                 // Normal, Siaga, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
                 // Normal, Waspada, Siaga, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Siaga, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
                 // Siaga, Normal, Waspada, Siaga
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
                 // Siaga, Siaga, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
                 // Siaga, Siaga, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Normal, Siaga
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Jembatan Merah  berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Jembatan Merah  berpotensi banjir!'
                 // Siaga, Waspada, Siaga, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
                 // Waspada, Normal, Siaga, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Siaga, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Siaga, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Istiqlal berpotensi banjir!'
 
                 // 2 Siaga 2 Waspada
 
                 // Siaga, Siaga, Waspada, Waspada
             } else if (fa == 'Siaga' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Siaga, Waspada
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Istiqlal berpotensi banjir!'
                 // Siaga, Waspada, Waspada, Siaga
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Siaga, Siaga, Waspada
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan istiqlal berpotensi banjir!'
                 // Waspada, Siaga, Waspada, Siaga
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai dan Jembatan Merah berpotensi banjir!'
                 // Waspada, Waspada, Siaga, Siaga
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal dan Jembatan Merah berpotensi banjir!'
 
                 // 2 Waspada 1 Siaga 1 Normal
 
                 // Waspada, Waspada, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Siaga, Waspada, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Siaga, Waspada, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Siaga, Normal, Waspada
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Normal, Siaga, Waspada, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Normal, Waspada, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Waspada, Normal, Siaga, Waspada
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Waspada, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Waspada, Waspada, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Waspada, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Normal, Waspada, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
 
                 //2 Normal 1 Siaga 1 Waspada
 
                 // Normal, Normal, Siaga, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == '' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Siaga, Normal, Normal, Waspada
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Normal, Siaga, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Normal, Waspada, Normal
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol warga perlu waspada!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol warga perlu waspada!'
                 // Normal, Siaga, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Waspada, Siaga, Normal, Normal
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
                 // Siaga, Waspada, Normal, Normal
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // Normal, Waspada, Siaga, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Waspada, Normal, Siaga, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!'
                 // Normal, Normal, Waspada, Siaga
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Waspada, Normal, Normal, Siaga
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
                 // Normal, Waspada, Normal, Siaga
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
 
                 // 1 Siaga 3 Waspada
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Waspada' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Siaga' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!!'
             } else if (fa == 'Waspada' && mg == 'Siaga' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Waspada' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // 1 Siaga 3 Normal
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Normal' && jm == 'Siaga') {
-                pesan = '[AWAS] Pada lokasi Jembatan Merah berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Jembatan Merah berpotensi banjir!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Siaga' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Istiqlal berpotensi banjir!!'
+                pesan = '! WARNING ! Pada lokasi Istiqlal berpotensi banjir!!'
             } else if (fa == 'Normal' && mg == 'Siaga' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Manggarai berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Manggarai berpotensi banjir!'
             } else if (fa == 'Siaga' && mg == 'Normal' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AWAS] Pada lokasi Flushing Ancol berpotensi banjir!'
+                pesan = '! WARNING ! Pada lokasi Flushing Ancol berpotensi banjir!'
                 // 2 Waspada 2 Normal
 
                 // Waspada, Waspada, Normal, Normal
             } else if (fa == 'Waspada' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
                 // Normal, Waspada, Waspada, Normal
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Manggarai dan Istiqlal warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Manggarai dan Istiqlal warga perlu waspada!'
                 // Waspada, Normal, Waspada, Normal
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol dan Istiqlal warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol dan Istiqlal warga perlu waspada!'
                 // Normal, Waspada, Normal, Waspada
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Manggarai dan Jembatan Merah warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Manggarai dan Jembatan Merah warga perlu waspada!'
                 // Waspada, Normal, Normal, Waspada
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol dan Manggarai warga perlu waspada!'
                 // Normal, Normal, Waspada, Waspada
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Istiqlal dan Jembatan Merah warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Istiqlal dan Jembatan Merah warga perlu waspada!'
 
                 // 1 Waspada 3 Normal
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Normal' && jm == 'Waspada') {
-                pesan = '[AMAN] Pada lokasi Jembatan Merah warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Jembatan Merah warga perlu waspada!'
             } else if (fa == 'Normal' && mg == 'Normal' && it == 'Waspada' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Istiqlal warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Istiqlal warga perlu waspada!'
             } else if (fa == 'Normal' && mg == 'Waspada' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Manggarai warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Manggarai warga perlu waspada!'
             } else if (fa == 'Waspada' && mg == 'Normal' && it == 'Normal' && jm == 'Normal') {
-                pesan = '[AMAN] Pada lokasi Flushing Ancol warga perlu waspada!'
+                pesan = '~ KONDISI STABIL ~ Pada lokasi Flushing Ancol warga perlu waspada!'
             } else {
-                pesan = '[AMAN] DAS Ciliwung tidak memiliki potensi banjir!'
+                pesan = '~ KONDISI STABIL ~ Sungai Ciliwung tidak memiliki potensi banjir!'
             }
         }
         return pesan
@@ -1653,5 +1652,4 @@ if (isset($_POST['submit'])) {
     var hasil = prediksiBanjir(statkl, statfa, statmg, statit, statjm);
     document.getElementById("hasil").innerHTML = hasil;
 </script>
-
 </html>
