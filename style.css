@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "Dekko";
+    src: url('Dekko-Regular.ttf') format('truetype');
+  }
+
+html {
+    color: white;
+    font-family: "Dekko", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/wallpaper.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#gambarLogo {
+    background-color: #e9dde2;
+    opacity: 100%;
+    width: 100%;
+    height: 90px;
+    z-index: 10;
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+#logo {
+    opacity: 100%;
+    z-index: 1;
+    top: 5px;
+    position: fixed;
+    left: 0;
+    height: 83px;
+    width: 250px;
+}
+
+.bagianInput {
+    position: relative;
+    top: 100px;
+    z-index: 2;
+    background-color: #1e0c0c9b;
+    width: 470px;
+    height: 620px;
+    border-radius: 20px;
+    border: #5d2609 3px solid;
+    text-align: center;
+}
+
+h1 {
+    position: fixed;
+    text-align: center;
+    z-index: 10;
+    top: 20px;
+    width: 100%;
+    margin: 0;
+    color: #684f51;
+}
+
+h3 {
+    font-size: 25px;
+    text-align: center;
+    padding-top: 22px;
+    margin: 0;
+    padding-bottom: 10px;
+    width: 100%;
+    padding-left: 2px;
+    font-weight: lighter;
+}
+
+input {
+    padding: 12px 20px;
+    width: 160px;
+    background-color: #D6B6BB;
+    border: 3px solid #8E3200;
+    display: inline-block;
+    margin: 8px;
+    border-radius: 50px;
+    color: black;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: #341111;
+    opacity: 0.7;
+    font-family: "Dekko", sans-serif;
+    font-size: 15px;
+
+}
+
+#pesan {
+    margin-left: 0px;
+}
+p {
+    font-size: 19px;
+    color: white;
+    opacity: 0.8;
+    margin-left: 20px;
+    text-align: center;
+}
+
+#submit {
+    background-color:#B35554;
+    font-family: "Dekko", sans-serif;
+    color: white;
+    padding: 14px 20px;
+    margin-left: 70px;
+    width: 150px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+    border: #6c3010 4px solid;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.719);
+}
+
+#show {
+    background-color: #B35554;
+    font-family: "Dekko", sans-serif;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    width: 150px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    border: #6c3010 4px solid;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.719);
+}
+
+#submit:hover {
+    transition: 0.6s;
+    background-color: #542105;
+}
+
+#show:hover {
+    transition: 0.6s;
+    background-color: #542105;
+}
+
+.tabelPrediksi {
+    color: black;
+    position: relative;
+    top: 170px;
+    width: 1000px;
+    background-color: #D0AFBB;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+    visibility: hidden;
+}
+
+table, tr, td, th {
+    border: 3px solid rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+}
+
+tr, th {
+    width: 15%;
+}
+
+td:first-child {
+    background-color: #DF8F8A;
+    color:#341111;
+    font-weight: bold;
+}
+
+td {
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+  }
+
+tr:nth-child(even) {
+    background-color: #824A4D;
+    color: white;
+  }
+  
+  th {
+    background-color: #503B3D;
+    color: white;
+  }
+
+#hasil {
+    background-color: #8f0000;
+    color: white;
+}
+
+span {
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    font-size: 16px;
+}
